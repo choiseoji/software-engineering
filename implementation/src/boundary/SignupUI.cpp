@@ -5,8 +5,8 @@ void SignupUI::inputInformation(istringstream& iss, RegisteredUser& registeredUs
     string id, password, phone_number;
     iss >> id >> password >> phone_number;
 
-    signup_.signupUser(id, password, phone_number, registeredUser);
+    tuple<string, string, string> userInfo = signup_.signupUser(id, password, phone_number, registeredUser);
     // 출력
     out_fp << "1.1. 회원가입\n";
-    out_fp << "> " << id << " " << password << " " << phone_number << "\n\n";
+    out_fp << "> " << get<0>(userInfo) << " " << get<1>(userInfo) << " " << get<2>(userInfo) << "\n\n";
 }

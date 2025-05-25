@@ -1,0 +1,19 @@
+#ifndef REGISTER_BICYCLE_UI_H
+# define REGISTER_BICYCLE_UI_H
+
+#include "../../include/control/RegisterBicycle.h"
+#include <fstream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+class RegisterBicycleUI {
+
+private:
+    RegisterBicycle registerBicycle_;
+
+public:
+    void inputBicycleInfo(istringstream& iss, RegisteredBicycle& registeredBicycle, ofstream& out_fp);
+};
+
+#endif

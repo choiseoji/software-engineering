@@ -10,6 +10,9 @@ private:
 public:
     Admin();
 
+    string getMemberPhonenumber();
+    void addRentedBicycle(Bicycle* bicycle);
+    vector<Bicycle*> listRentedBicycle();
 };
 
 #endif

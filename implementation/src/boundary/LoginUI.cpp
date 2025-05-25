@@ -5,7 +5,10 @@ void LoginUI::inputIdAndPassword(istringstream& iss, RegisteredUser& registeredU
     string id, password;
     iss >> id >> password;
 
-    // 출력
-    out_fp << "2.1. 로그인\n";
-    out_fp << "> " << login_.loginUser(id, password, registeredUser) << "\n";
+    if (login_.loginUser(id, password, registeredUser)) {
+
+        // 출력
+        out_fp << "2.1. 로그인\n";
+        out_fp << "> " << id << " " << password << "\n\n";
+    }
 }

@@ -11,7 +11,7 @@ class Login {
 private:
 
 public:
-    string loginUser(const string& id, const string& password, RegisteredUser& registeredUser);
+    bool loginUser(const string& id, const string& password, RegisteredUser& registeredUser);
 
 };
 

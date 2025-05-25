@@ -1,6 +1,6 @@
 #include "../../include/control/RentBicycle.h"
 
-string RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle) {
+pair<string, string> RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle) {
 
     vector<User*>& users = registeredUser.listUser();
 
@@ -11,7 +11,8 @@ string RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser
             Bicycle* bicycle = registerBicycle.findBicycleById(id);
             user->addRentedBicycle(bicycle);
 
-            return (bicycle->getBicycleDetails());
+            return {bicycle->getBicycleId(), bicycle->getBicycleName()};
         }
     }
+    return {"", ""};
 }

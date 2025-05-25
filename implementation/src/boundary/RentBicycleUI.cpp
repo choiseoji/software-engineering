@@ -5,7 +5,9 @@ void RentBicycleUI::rentRequest(istringstream& iss, RegisteredBicycle& registere
     string id;
     iss >> id;
 
+    pair<string, string> rentedBicycleInfo = rentBicycle_.rentBicycle(id, registeredUser, registeredBicycle);
+
     // 출력
     out_fp << "4.1. 자전거 대여\n";
-    out_fp << "> " << rentBicycle_.rentBicycle(id, registeredUser, registeredBicycle) << "\n";
+    out_fp << "> " << rentedBicycleInfo.first << " " << rentedBicycleInfo.second << "\n\n";
 }

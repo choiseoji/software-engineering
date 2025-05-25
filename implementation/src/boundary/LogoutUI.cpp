@@ -2,7 +2,11 @@
 
 void LogoutUI::logoutRequest(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp) {
 
-    // 출력
-    out_fp << "2.2. 로그아웃\n";
-    out_fp << "> " << logout_.logoutUser(registeredUser) << "\n\n"; 
+    string logoutUserId = logout_.logoutUser(registeredUser);
+    if (!logoutUserId.empty()) {
+
+        // 출력
+        out_fp << "2.2. 로그아웃\n";
+        out_fp << "> " << logoutUserId << "\n\n"; 
+    }
 }

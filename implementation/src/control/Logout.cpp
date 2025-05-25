@@ -7,9 +7,10 @@ string Logout::logoutUser(RegisteredUser& registeredUser) {
     for (User* user : users) { 
 
         if (user->checkLoginStatus()) {
-            user->setLogoutStatus();
 
+            user->setLogoutStatus();
             return (user->getUserId());
         }
     }
+    return ("");
 }

@@ -1,6 +1,14 @@
 #include "../../include/entity/Member.h"
 
-Member::Member(const std::string& id, const std::string& password) : User(id, password) { }
+Member::Member(const string& id, const string& password, const string& phonenumber) : User(id, password) {
+
+    phonenumber_ = phonenumber;
+}
+
+string Member::getMemberPhonenumber() {
+
+    return (phonenumber_);
+}
 
 void Member::addRentedBicycle(Bicycle* bicycle) {
 

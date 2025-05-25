@@ -1,4 +1,4 @@
-#include "User.h"
+#include "../../include/entity/User.h"
 
 User::User(const string& id, const string& password) {
     
@@ -7,7 +7,7 @@ User::User(const string& id, const string& password) {
     is_logined_ = false;   // 초기 로그인 상태 : false
 }
 
-bool User::checkIdAndPassword(const string& id, const string& password) {
+bool User::checkIdAndPassword(const string& id, const string& password) const {
 
     if (id_ == id && password_ == password)
         return (true);
@@ -27,4 +27,14 @@ bool User::checkLoginStatus() {
 void User::setLogoutStatus() {
 
     is_logined_ = false;
+}
+
+string User::getUserId() {
+
+    return (id_);
+}
+
+string User::getUserPassword() {
+
+    return (password_);
 }

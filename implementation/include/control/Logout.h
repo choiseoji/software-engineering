@@ -8,7 +8,7 @@ class Logout {
 private:
 
 public:
-    void logoutUser(RegisteredUser& registeredUser);
+    string logoutUser(RegisteredUser& registeredUser);
 };
 
 #endif

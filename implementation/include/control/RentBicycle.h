@@ -9,7 +9,7 @@ class RentBicycle {
 private:
 
 public:
-    void rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle);
+    string rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle);
 
 };
 

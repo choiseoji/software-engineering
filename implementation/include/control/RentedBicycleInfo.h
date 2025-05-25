@@ -10,7 +10,7 @@ class RentedBicycleInfo {
 private:
 
 public:
-    string viewRentedBicycle(RegisteredUser& registeredUser);
+    vector<string> viewRentedBicycle(RegisteredUser& registeredUser);
 };
 
 #endif

@@ -5,8 +5,8 @@ void RegisterBicycleUI::inputBicycleInfo(istringstream& iss, RegisteredBicycle& 
     string id, password;
     iss >> id >> password;
 
-    registerBicycle_.registerBicycle(id, password, registeredBicycle);
+    pair<string, string> bicycleInfo = registerBicycle_.registerBicycle(id, password, registeredBicycle);
     // 출력
     out_fp << "3.1. 자전거 등록\n";
-    out_fp << "> " << id << " " << password << "\n\n";
+    out_fp << "> " << bicycleInfo.first << " " << bicycleInfo.second << "\n\n";
 }

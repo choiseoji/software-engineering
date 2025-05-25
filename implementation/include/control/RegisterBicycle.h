@@ -11,7 +11,7 @@ class RegisterBicycle {
 private:
 
 public:
-    void registerBicycle(const string& id, const string& name, RegisteredBicycle& registeredBicycle);
+    pair<string, string> registerBicycle(const string& id, const string& name, RegisteredBicycle& registeredBicycle);
 };
 
 #endif

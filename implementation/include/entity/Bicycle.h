@@ -17,6 +17,7 @@ public:
     Bicycle* setBicycleStatusRented();
     string getBicycleDetails();
     string getBicycleId();
+    string getBicycleName();
 };
 
 # endif

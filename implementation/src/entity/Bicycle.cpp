@@ -22,3 +22,8 @@ string Bicycle::getBicycleId() {
     
     return (bicycle_id_);
 }
+
+string Bicycle::getBicycleName() {
+
+    return (bicycle_name_);
+}

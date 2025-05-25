@@ -12,8 +12,8 @@ private:
     vector<Bicycle*> registered_bicycles_;   // Bicycle 포인터 저장
 
 public:
-    void addBicycle(Bicycle* bicycle);
-
+    void addNewBicycle(Bicycle* bicycle);
+    Bicycle* findBicycleById(const string& id);
 };
 
 #endif

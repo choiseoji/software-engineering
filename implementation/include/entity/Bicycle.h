@@ -14,9 +14,9 @@ private:
 public:
     Bicycle(const string& bicycle_id, const string& bicycle_name);
 
-    void setBicycleStatusRented();
+    Bicycle* setBicycleStatusRented();
     string getBicycleDetails();
-
+    string getBicycleId();
 };
 
 # endif

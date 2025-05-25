@@ -13,7 +13,7 @@ private:
 
 public:
     void addNewMember(User* user);
-    vector<User*> listUser();
+    vector<User*>& listUser();
 
 };
 

@@ -1,6 +1,6 @@
 #include "../../include/control/Login.h"
 
-bool Login::loginUser(const string& id, const string& password, RegisteredUser& registeredUser) {
+pair<string, string> Login::loginUser(const string& id, const string& password, RegisteredUser& registeredUser) {
 
     vector<User*>& users = registeredUser.listUser();
     
@@ -9,8 +9,8 @@ bool Login::loginUser(const string& id, const string& password, RegisteredUser& 
         if (user->checkIdAndPassword(id, password)) {
             
             user->setLoginStatus();
-            return (true);
+            return {user->getUserId(), user->getUserPassword()};
         }
     }
-    return (false);
+    return {"", ""};
 }

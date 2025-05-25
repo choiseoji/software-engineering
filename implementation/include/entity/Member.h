@@ -4,6 +4,7 @@
 # include "User.h"
 # include "Bicycle.h"
 # include <vector>
+# include <algorithm>
 using namespace std;
 
 class Member : public User {

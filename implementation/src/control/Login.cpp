@@ -9,7 +9,7 @@ string Login::loginUser(const string& id, const string& password, RegisteredUser
         if (user->checkIdAndPassword(id, password)) {
             user->setLoginStatus();
 
-            return (id + " " + password);
+            return (id + " " + password + "\n");
         }
     }
 }

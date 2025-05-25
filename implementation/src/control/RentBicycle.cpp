@@ -1,6 +1,6 @@
 #include "../../include/control/RentBicycle.h"
 
-void RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle) {
+string RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser, RegisteredBicycle& registerBicycle) {
 
     vector<User*>& users = registeredUser.listUser();
 
@@ -8,7 +8,10 @@ void RentBicycle::rentBicycle(const string& id, RegisteredUser& registeredUser, 
 
         if (user->checkLoginStatus()) {
             
-            user->addRentedBicycle(registerBicycle.findBicycleById(id));
+            Bicycle* bicycle = registerBicycle.findBicycleById(id);
+            user->addRentedBicycle(bicycle);
+
+            return (bicycle->getBicycleDetails());
         }
     }
 }

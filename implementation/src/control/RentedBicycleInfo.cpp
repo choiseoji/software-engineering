@@ -1,9 +1,9 @@
 #include "../../include/control/RentedBicycleInfo.h"
 
-string RentedBicycleInfo::viewRentedBicycle(RegisteredUser& registeredUser) {
+vector<string> RentedBicycleInfo::viewRentedBicycle(RegisteredUser& registeredUser) {
 
-    string result = "";
     vector<User*>& users = registeredUser.listUser();
+    vector<string> result;
 
     for (User* user : users) { 
         
@@ -11,7 +11,8 @@ string RentedBicycleInfo::viewRentedBicycle(RegisteredUser& registeredUser) {
 
             vector<Bicycle*> bicycles = user->listRentedBicycle();
             for (Bicycle* b : bicycles) {
-                result += b->getBicycleDetails();
+
+                result.push_back(b->getBicycleDetails());
             }
         }
     }

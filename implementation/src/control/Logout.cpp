@@ -1,6 +1,6 @@
 #include "../../include/control/Logout.h"
 
-void Logout::logoutUser(RegisteredUser& registeredUser) {
+string Logout::logoutUser(RegisteredUser& registeredUser) {
 
     vector<User*>& users = registeredUser.listUser();
 
@@ -8,6 +8,8 @@ void Logout::logoutUser(RegisteredUser& registeredUser) {
 
         if (user->checkLoginStatus()) {
             user->setLogoutStatus();
+
+            return (user->getUserId());
         }
     }
 }

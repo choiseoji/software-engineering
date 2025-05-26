@@ -3,12 +3,13 @@
 
 # include "User.h"
 
+// User를 상속받는 Admin entity 클래스 정의
 class Admin : public User {
 
 private:
 
 public:
-    Admin();
+    Admin();  // Admin 생성자
     
 };
 

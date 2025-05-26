@@ -6,14 +6,15 @@
 # include <vector>
 using namespace std;
 
+// 유저 저장하는 RegisteredUser 엔티티 클래스 정의
 class RegisteredUser {
 
 private:
-    vector<User*> registered_users_;  // User 포인터 저장
+    vector<User*> registeredUsers_;  // 등록된 유저
 
 public:
-    void addNewMember(User* user);
-    vector<User*>& listUser();
+    void addNewMember(User* user);  // 유저 새로 등록
+    vector<User*>& listUser();   // 유저 리스트 조회
 
 };
 

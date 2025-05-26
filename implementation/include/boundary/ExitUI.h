@@ -7,14 +7,15 @@
 #include <sstream>
 using namespace std;
 
+// ExitUI 바운더리 클래스 정의
 class ExitUI {
 
 private:
-    Exit& exit_;
+    Exit& exit_;    // exit control 객체
 
 public:
-    ExitUI(Exit& exit);
-    void exitRequest(ofstream& out_fp, int& is_program_exit);
+    ExitUI(Exit& exit);   // 생성자에 exit 주입
+    void exitRequest(ofstream& outFp, int& isProgramExit);   // 종료 요청
 
 };
 

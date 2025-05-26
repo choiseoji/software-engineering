@@ -34,9 +34,9 @@ using namespace std;
 
 void doTask(ifstream& inFp, ofstream& outFp);
 
+// 메인 함수, 입력-출력 파일 열고, doTask 실행
 int main() {
 
-    // input, output
     ifstream inFp;
     ofstream outFp;
     inFp.open(INPUT_FILE_NAME);
@@ -49,6 +49,7 @@ int main() {
     return (0);
 }
 
+// 필요한 객체 초기 세팅과 메뉴 파싱
 void doTask(ifstream& inFp, ofstream& outFp) {
 
     // 초기 객체 생성
@@ -75,7 +76,7 @@ void doTask(ifstream& inFp, ofstream& outFp) {
     RentBicycleUI rentBicycleUi(rentBicycle);
     RentedBicycleInfoUI rentedBicycleInfoUi(rentedBicycleInfo);
 
-    // parsing
+    // 메뉴 파싱
     int menuLevel1 = 0, menuLevel2 = 0;
     int isProgramExit = 0;
     while (!isProgramExit) {

@@ -10,9 +10,10 @@ using namespace std;
 class LoginUI {
 
 private:
-    Login login_;
+    Login& login_;
 
 public:
+    LoginUI(Login& login);
     void inputIdAndPassword(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 

@@ -7,10 +7,12 @@
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
+// entity 
 #include "./include/entity/RegisteredBicycle.h"
 #include "./include/entity/RegisteredUser.h"
 #include "./include/entity/Admin.h"
 
+// boundary
 #include "./include/boundary/ExitUI.h"
 #include "./include/boundary/SignupUI.h"
 #include "./include/boundary/LoginUI.h"
@@ -18,6 +20,16 @@
 #include "./include/boundary/RegisterBicycleUI.h"
 #include "./include/boundary/RentBicycleUI.h"
 #include "./include/boundary/RentedBicycleInfoUI.h"
+
+// control
+#include "./include/control/Exit.h"
+#include "./include/control/Signup.h"
+#include "./include/control/Login.h"
+#include "./include/control/Logout.h"
+#include "./include/control/RegisterBicycle.h"
+#include "./include/control/RentBicycle.h"
+#include "./include/control/RentedBicycleInfo.h"
+
 using namespace std;
 
 void doTask(ifstream& in_fp, ofstream& out_fp);
@@ -45,14 +57,23 @@ void doTask(ifstream& in_fp, ofstream& out_fp) {
     User* adminUser = new Admin();
     registeredUser.addNewMember(adminUser);
 
+    // control 객체 생성
+    Exit exit;
+    Signup signup;
+    Login login;
+    Logout logout;
+    RegisterBicycle registerBicycle;
+    RentBicycle rentBicycle;
+    RentedBicycleInfo rentedBicycleInfo;
+
     // boundary 객체 생성
-    ExitUI exitUi;
-    SignupUI signupUi;
-    LoginUI loginUi;
-    LogoutUI logoutUi;
-    RegisterBicycleUI registerBicycleUi;
-    RentBicycleUI rentBicycleUi;
-    RentedBicycleInfoUI rentedBicycleInfoUi;
+    ExitUI exitUi(exit);
+    SignupUI signupUi(signup);
+    LoginUI loginUi(login);
+    LogoutUI logoutUi(logout);
+    RegisterBicycleUI registerBicycleUi(registerBicycle);
+    RentBicycleUI rentBicycleUi(rentBicycle);
+    RentedBicycleInfoUI rentedBicycleInfoUi(rentedBicycleInfo);
 
     // parsing
     int menu_level_1 = 0, menu_level_2 = 0;

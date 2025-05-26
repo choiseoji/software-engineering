@@ -10,9 +10,10 @@ using namespace std;
 class LogoutUI {
 
 private:
-    Logout logout_;
+    Logout& logout_;
 
 public:
+    LogoutUI(Logout& logout);
     void logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp);
 };
 

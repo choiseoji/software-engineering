@@ -10,9 +10,10 @@ using namespace std;
 class ExitUI {
 
 private:
-    Exit exit_;
+    Exit& exit_;
 
 public:
+    ExitUI(Exit& exit);
     void exitRequest(ofstream& out_fp, int& is_program_exit);
 
 };

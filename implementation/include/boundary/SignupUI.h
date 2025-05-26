@@ -10,9 +10,10 @@ using namespace std;
 class SignupUI {
 
 private:
-    Signup signup_;
+    Signup& signup_;
 
 public:
+    SignupUI(Signup& signup);
     void inputInformation(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 

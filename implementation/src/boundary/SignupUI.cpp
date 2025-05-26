@@ -1,5 +1,7 @@
 #include "../../include/boundary/SignupUI.h"
 
+SignupUI::SignupUI(Signup& signup) : signup_(signup) {}
+
 void SignupUI::inputInformation(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp) {
 
     string id, password, phone_number;

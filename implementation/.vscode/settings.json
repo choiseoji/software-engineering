@@ -48,6 +48,11 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "__threading_support": "cpp",
+        "cstddef": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "ostream": "cpp"
     }
 }

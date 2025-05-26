@@ -1,5 +1,7 @@
 #include "../../include/boundary/LoginUI.h"
 
+LoginUI::LoginUI(Login& login) : login_(login) {}
+
 void LoginUI::inputIdAndPassword(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp) {
 
     string id, password;

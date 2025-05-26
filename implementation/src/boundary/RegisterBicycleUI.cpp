@@ -1,5 +1,7 @@
 #include "../../include/boundary/RegisterBicycleUI.h"
 
+RegisterBicycleUI::RegisterBicycleUI(RegisterBicycle& registerBicycle) : registerBicycle_(registerBicycle) {}
+
 void RegisterBicycleUI::inputBicycleInfo(ifstream& in_fp, RegisteredBicycle& registeredBicycle, ofstream& out_fp) {
 
     string id, password;

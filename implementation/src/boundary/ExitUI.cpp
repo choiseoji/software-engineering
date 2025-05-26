@@ -1,5 +1,7 @@
 #include "../../include/boundary/ExitUI.h"
 
+ExitUI::ExitUI(Exit& exit) : exit_(exit) {}
+
 void ExitUI::exitRequest(ofstream& out_fp, int& is_program_exit) {
 
     exit_.exitRequest(is_program_exit);

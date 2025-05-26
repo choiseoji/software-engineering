@@ -1,5 +1,7 @@
 #include "../../include/boundary/RentedBicycleInfoUI.h"
 
+RentedBicycleInfoUI::RentedBicycleInfoUI(RentedBicycleInfo& rentedBicycleInfo) : rentedBicycleInfo_(rentedBicycleInfo) {}
+
 void RentedBicycleInfoUI::viewRentedBicycleRequest(RegisteredUser& registeredUser, ofstream& out_fp) {
 
     // 출력

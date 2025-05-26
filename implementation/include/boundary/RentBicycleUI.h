@@ -9,9 +9,10 @@
 class RentBicycleUI {
 
 private:
-    RentBicycle rentBicycle_;
+    RentBicycle& rentBicycle_;
 
 public:
+    RentBicycleUI(RentBicycle& rentBicycle);
     void rentRequest(ifstream& in_fp, RegisteredBicycle& registeredBicycle, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 

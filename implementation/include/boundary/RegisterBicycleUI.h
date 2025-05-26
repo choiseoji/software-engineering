@@ -10,9 +10,10 @@ using namespace std;
 class RegisterBicycleUI {
 
 private:
-    RegisterBicycle registerBicycle_;
+    RegisterBicycle& registerBicycle_;
 
 public:
+    RegisterBicycleUI(RegisterBicycle& registerBicycle);
     void inputBicycleInfo(ifstream& in_fp, RegisteredBicycle& registeredBicycle, ofstream& out_fp);
 };
 

@@ -11,9 +11,10 @@ using namespace std;
 class RentedBicycleInfoUI {
 
 private:
-    RentedBicycleInfo rentedBicycleInfo_;
+    RentedBicycleInfo& rentedBicycleInfo_;
 
 public:
+    RentedBicycleInfoUI(RentedBicycleInfo& rentedBicycleInfo);
     void viewRentedBicycleRequest(RegisteredUser& registeredUser, ofstream& out_fp);
 
 };

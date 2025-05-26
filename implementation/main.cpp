@@ -3,10 +3,6 @@
 #include <string>
 #include <sstream>
 
-#define MAX_STRING 32
-#define INPUT_FILE_NAME "input.txt"
-#define OUTPUT_FILE_NAME "output.txt"
-
 // entity 
 #include "./include/entity/RegisteredBicycle.h"
 #include "./include/entity/RegisteredUser.h"
@@ -30,26 +26,30 @@
 #include "./include/control/RentBicycle.h"
 #include "./include/control/RentedBicycleInfo.h"
 
+#define MAX_STRING 32
+#define INPUT_FILE_NAME "input.txt"
+#define OUTPUT_FILE_NAME "output.txt"
+
 using namespace std;
 
-void doTask(ifstream& in_fp, ofstream& out_fp);
+void doTask(ifstream& inFp, ofstream& outFp);
 
 int main() {
 
     // input, output
-    ifstream in_fp;
-    ofstream out_fp;
-    in_fp.open(INPUT_FILE_NAME);
-    out_fp.open(OUTPUT_FILE_NAME);
+    ifstream inFp;
+    ofstream outFp;
+    inFp.open(INPUT_FILE_NAME);
+    outFp.open(OUTPUT_FILE_NAME);
 
-    doTask(in_fp, out_fp);
+    doTask(inFp, outFp);
 
-    out_fp.close();
-    in_fp.close();
+    outFp.close();
+    inFp.close();
     return (0);
 }
 
-void doTask(ifstream& in_fp, ofstream& out_fp) {
+void doTask(ifstream& inFp, ofstream& outFp) {
 
     // 초기 객체 생성
     RegisteredBicycle registeredBicycle;
@@ -76,76 +76,74 @@ void doTask(ifstream& in_fp, ofstream& out_fp) {
     RentedBicycleInfoUI rentedBicycleInfoUi(rentedBicycleInfo);
 
     // parsing
-    int menu_level_1 = 0, menu_level_2 = 0;
-    int is_program_exit = 0;
+    int menuLevel1 = 0, menuLevel2 = 0;
+    int isProgramExit = 0;
+    while (!isProgramExit) {
 
-    while (!is_program_exit) {
-
-        in_fp >> menu_level_1 >> menu_level_2;
-
-        switch(menu_level_1) {
+        inFp >> menuLevel1 >> menuLevel2;
+        switch(menuLevel1) {
 
             case 1:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 회원가입 [id] [password] [phone-number]
                     case 1:
-                        signupUi.inputInformation(in_fp, registeredUser, out_fp);
+                        signupUi.inputInformation(inFp, registeredUser, outFp);
                         break ;
                 }
                 break ;
 
             case 2:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 로그인 [id] [password]
                     case 1:
-                        loginUi.inputIdAndPassword(in_fp, registeredUser, out_fp);
+                        loginUi.inputIdAndPassword(inFp, registeredUser, outFp);
                         break ;
 
                     // 로그아웃
                     case 2:
-                        logoutUi.logoutRequest(registeredUser, out_fp);
+                        logoutUi.logoutRequest(registeredUser, outFp);
                         break;
                 }
                 break ;
 
             case 3:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 자전거 등록 [id] [name]
                     case 1: 
-                        registerBicycleUi.inputBicycleInfo(in_fp, registeredBicycle, out_fp);
+                        registerBicycleUi.inputBicycleInfo(inFp, registeredBicycle, outFp);
                         break ;
                 }
                 break ;
             
             case 4:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 자전거 대여 [id]
                     case 1: 
-                        rentBicycleUi.rentRequest(in_fp, registeredBicycle, registeredUser, out_fp);
+                        rentBicycleUi.rentRequest(inFp, registeredBicycle, registeredUser, outFp);
                         break ;
                 }
                 break ;
 
             case 5:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 자전거 대여 리스트
                     case 1:
-                        rentedBicycleInfoUi.viewRentedBicycleRequest(registeredUser, out_fp);
+                        rentedBicycleInfoUi.viewRentedBicycleRequest(registeredUser, outFp);
                         break;
                 }
                 break ;
 
             case 6:
-                switch(menu_level_2) {
+                switch(menuLevel2) {
 
                     // 시스템 종료
                     case 1:
-                        exitUi.exitRequest(out_fp, is_program_exit);
+                        exitUi.exitRequest(outFp, isProgramExit);
                         break ; 
                 }
         }

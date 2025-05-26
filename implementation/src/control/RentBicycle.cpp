@@ -11,8 +11,8 @@ pair<string, string> RentBicycle::rentBicycle(const string& id, RegisteredUser& 
             Bicycle* bicycle = registerBicycle.findBicycleById(id);
             user->addRentedBicycle(bicycle);
 
-            return {bicycle->getBicycleId(), bicycle->getBicycleName()};
+            return make_pair(bicycle->getBicycleId(), bicycle->getBicycleName());
         }
     }
-    return {"", ""};
+    return make_pair("", "");
 }

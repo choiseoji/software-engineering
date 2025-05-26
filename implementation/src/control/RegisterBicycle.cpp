@@ -5,5 +5,5 @@ pair<string, string> RegisterBicycle::registerBicycle(const string& id, const st
     Bicycle* newBicycle = new Bicycle(id, name);
     registeredBicycle.addNewBicycle(newBicycle);    // RegisteredBicycle에 새로운 자전거 추가
 
-    return {newBicycle->getBicycleId(), newBicycle->getBicycleName()};
+    return make_pair(newBicycle->getBicycleId(), newBicycle->getBicycleName());
 }

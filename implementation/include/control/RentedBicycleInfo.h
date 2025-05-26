@@ -10,7 +10,7 @@ class RentedBicycleInfo {
 private:
 
 public:
-    vector<pair<string, string>> viewRentedBicycle(RegisteredUser& registeredUser);
+    vector<pair<string, string> > viewRentedBicycle(RegisteredUser& registeredUser);
 };
 
 #endif

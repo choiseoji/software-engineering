@@ -11,7 +11,7 @@ class Signup {
 private:
 
 public:
-    tuple<string, string, string> signupUser(const string& id, const string& password, const string& phonenumber, RegisteredUser& registeredUser);
+    void signupUser(const string& id, const string& password, const string& phonenumber, RegisteredUser& registeredUser);
 
 };
 

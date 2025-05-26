@@ -2,16 +2,15 @@
 # define MEMBER_H
 
 # include "User.h"
-# include "Bicycle.h"
+# include "MemberRentedBicycleCollection.h"
 # include <vector>
-# include <algorithm>
 using namespace std;
 
 class Member : public User {
 
 private:
     string phonenumber_;
-    vector<Bicycle*> rented_bicycles_;
+    MemberRentedBicycleCollection rented_bicycle_collection;
 
 public:
     Member(const string& id, const string& password, const string& phonenumber);

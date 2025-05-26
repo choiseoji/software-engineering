@@ -10,7 +10,7 @@ class Member : public User {
 
 private:
     string phonenumber_;
-    MemberRentedBicycleCollection rented_bicycle_collection;
+    MemberRentedBicycleCollection rented_bicycle_collection_;
 
 public:
     Member(const string& id, const string& password, const string& phonenumber);

@@ -12,10 +12,10 @@ string Member::getMemberPhonenumber() {
 
 void Member::addRentedBicycle(Bicycle* bicycle) {
 
-    rented_bicycle_collection.addRentedBicycle(bicycle);
+    rented_bicycle_collection_.addRentedBicycle(bicycle);
 }
 
 vector<Bicycle*> Member::listRentedBicycle() {
 
-    return (rented_bicycle_collection.listRentedBicycle());
+    return (rented_bicycle_collection_.listRentedBicycle());
 }

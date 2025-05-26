@@ -24,9 +24,8 @@ public:
     string getUserId();
     string getUserPassword();
 
-    virtual string getMemberPhonenumber() = 0;
-    virtual void addRentedBicycle(Bicycle* bicycle) = 0;
-    virtual vector<Bicycle*> listRentedBicycle() = 0;
+    virtual ~User() {}
+
 };
 
 #endif

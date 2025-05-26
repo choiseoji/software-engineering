@@ -17,13 +17,13 @@ LogoutUI::LogoutUI(Logout& logout) : logout_(logout) {}
         - outFp : 출력 파일 스트림
     반환 값: 없음
 */
-void LogoutUI::logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp) {
+void LogoutUI::logoutRequest(RegisteredUser& registeredUser, ofstream& outFp) {
 
     string logoutUserId = logout_.logoutUser(registeredUser);
     if (!logoutUserId.empty()) {
 
         // 출력
-        out_fp << "2.2. 로그아웃\n";
-        out_fp << "> " << logoutUserId << "\n\n"; 
+        outFp << "2.2. 로그아웃\n";
+        outFp << "> " << logoutUserId << "\n\n"; 
     }
 }

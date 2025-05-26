@@ -15,7 +15,7 @@ private:
 
 public:
     LogoutUI(Logout& logout);    // 생성자에 logout 주입
-    void logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp);  // 로그아웃 요청
+    void logoutRequest(RegisteredUser& registeredUser, ofstream& outFp);  // 로그아웃 요청
 };
 
 #endif

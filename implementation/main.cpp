@@ -11,6 +11,7 @@
 #include "./include/entity/RegisteredUser.h"
 #include "./include/entity/Admin.h"
 
+#include "./include/boundary/ExitUI.h"
 #include "./include/boundary/SignupUI.h"
 #include "./include/boundary/LoginUI.h"
 #include "./include/boundary/LogoutUI.h"
@@ -20,7 +21,7 @@
 using namespace std;
 
 int main() {
-
+ 
     // 초기 객체 생성
     RegisteredBicycle registeredBicycle;
     RegisteredUser registeredUser;
@@ -28,6 +29,7 @@ int main() {
     registeredUser.addNewMember(adminUser);
 
     // boundary 객체 생성
+    ExitUI exitUi;
     SignupUI signupUi;
     LoginUI loginUi;
     LogoutUI logoutUi;
@@ -112,9 +114,9 @@ int main() {
             case 6:
                 switch(menu_level_2) {
 
+                    // 시스템 종료
                     case 1:
-                        out_fp << "6.1. 종료";
-                        is_program_exit = 1;
+                        exitUi.exitRequest(out_fp, is_program_exit);
                         break ; 
                 }
         }

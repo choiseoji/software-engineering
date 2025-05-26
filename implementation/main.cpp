@@ -20,8 +20,25 @@
 #include "./include/boundary/RentedBicycleInfoUI.h"
 using namespace std;
 
+void doTask(ifstream& in_fp, ofstream& out_fp);
+
 int main() {
- 
+
+    // input, output
+    ifstream in_fp;
+    ofstream out_fp;
+    in_fp.open(INPUT_FILE_NAME);
+    out_fp.open(OUTPUT_FILE_NAME);
+
+    doTask(in_fp, out_fp);
+
+    out_fp.close();
+    in_fp.close();
+    return (0);
+}
+
+void doTask(ifstream& in_fp, ofstream& out_fp) {
+
     // 초기 객체 생성
     RegisteredBicycle registeredBicycle;
     RegisteredUser registeredUser;
@@ -37,22 +54,13 @@ int main() {
     RentBicycleUI rentBicycleUi;
     RentedBicycleInfoUI rentedBicycleInfoUi;
 
-    // input, output
-    ifstream in_fp;
-    ofstream out_fp;
-    in_fp.open(INPUT_FILE_NAME);
-    out_fp.open(OUTPUT_FILE_NAME);
-
     // parsing
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
-    string line;
+    while (!is_program_exit) {
 
-    while (getline(in_fp, line)) {
-        istringstream iss(line);
-
-        iss >> menu_level_1 >> menu_level_2;
+        in_fp >> menu_level_1 >> menu_level_2;
 
         switch(menu_level_1) {
 
@@ -61,7 +69,7 @@ int main() {
 
                     // 회원가입 [id] [password] [phone-number]
                     case 1:
-                        signupUi.inputInformation(iss, registeredUser, out_fp);
+                        signupUi.inputInformation(in_fp, registeredUser, out_fp);
                         break ;
                 }
                 break ;
@@ -71,12 +79,12 @@ int main() {
 
                     // 로그인 [id] [password]
                     case 1:
-                        loginUi.inputIdAndPassword(iss, registeredUser, out_fp);
+                        loginUi.inputIdAndPassword(in_fp, registeredUser, out_fp);
                         break ;
 
                     // 로그아웃
                     case 2:
-                        logoutUi.logoutRequest(iss, registeredUser, out_fp);
+                        logoutUi.logoutRequest(registeredUser, out_fp);
                         break;
                 }
                 break ;
@@ -86,7 +94,7 @@ int main() {
 
                     // 자전거 등록 [id] [name]
                     case 1: 
-                        registerBicycleUi.inputBicycleInfo(iss, registeredBicycle, out_fp);
+                        registerBicycleUi.inputBicycleInfo(in_fp, registeredBicycle, out_fp);
                         break ;
                 }
                 break ;
@@ -96,7 +104,7 @@ int main() {
 
                     // 자전거 대여 [id]
                     case 1: 
-                        rentBicycleUi.rentRequest(iss, registeredBicycle, registeredUser, out_fp);
+                        rentBicycleUi.rentRequest(in_fp, registeredBicycle, registeredUser, out_fp);
                         break ;
                 }
                 break ;
@@ -106,7 +114,7 @@ int main() {
 
                     // 자전거 대여 리스트
                     case 1:
-                        rentedBicycleInfoUi.viewRentedBicycleRequest(iss, registeredUser, out_fp);
+                        rentedBicycleInfoUi.viewRentedBicycleRequest(registeredUser, out_fp);
                         break;
                 }
                 break ;
@@ -121,8 +129,4 @@ int main() {
                 }
         }
     }
-
-    out_fp.close();
-    in_fp.close();
-    return (0);
 }

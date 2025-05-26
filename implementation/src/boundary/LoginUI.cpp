@@ -13,9 +13,9 @@ LoginUI::LoginUI(Login& login) : login_(login) {}
  * 함수이름 : inputIdAndPassword
  * 기능 : 입력 파일에서 로그인 정보를 받아 로그인을 처리하고, 출력 파일에 출력
  * 전달인자 :
- *      - in_fp : 입력 파일 스트림
+ *      - inFp : 입력 파일 스트림
  *      - registeredUser : 등록된 사용자 목록을 관리하는 객체
- *      - out_fp : 출력 파일 스트림
+ *      - outFp : 출력 파일 스트림
  * 반환 값 : 없음
  */
 void LoginUI::inputIdAndPassword(ifstream& inFp, RegisteredUser& registeredUser, ofstream& outFp) {

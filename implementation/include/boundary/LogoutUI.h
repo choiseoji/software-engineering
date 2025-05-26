@@ -7,14 +7,15 @@
 #include <sstream>
 using namespace std;
 
+// LogoutUI 바운더리 클래스 정의
 class LogoutUI {
 
 private:
-    Logout& logout_;
+    Logout& logout_;   // logout control 객체
 
 public:
-    LogoutUI(Logout& logout);
-    void logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp);
+    LogoutUI(Logout& logout);    // 생성자에 logout 주입
+    void logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp);  // 로그아웃 요청
 };
 
 #endif

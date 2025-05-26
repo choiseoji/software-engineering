@@ -7,11 +7,14 @@ pair<string, string> RentBicycle::rentBicycle(const string& id, RegisteredUser& 
     for (User* user : users) { 
 
         if (user->checkLoginStatus()) {
-            
-            Bicycle* bicycle = registerBicycle.findBicycleById(id);
-            user->addRentedBicycle(bicycle);
 
-            return make_pair(bicycle->getBicycleId(), bicycle->getBicycleName());
+            Member* member = dynamic_cast<Member*>(user);
+            if (member) {
+                
+                Bicycle* bicycle = registerBicycle.findBicycleById(id);
+                member->addRentedBicycle(bicycle);
+                return make_pair(bicycle->getBicycleId(), bicycle->getBicycleName());
+            }
         }
     }
     return make_pair("", "");

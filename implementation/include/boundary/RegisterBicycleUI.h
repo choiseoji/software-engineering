@@ -13,7 +13,7 @@ private:
     RegisterBicycle registerBicycle_;
 
 public:
-    void inputBicycleInfo(istringstream& iss, RegisteredBicycle& registeredBicycle, ofstream& out_fp);
+    void inputBicycleInfo(ifstream& in_fp, RegisteredBicycle& registeredBicycle, ofstream& out_fp);
 };
 
 #endif

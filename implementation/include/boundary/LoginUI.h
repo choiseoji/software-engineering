@@ -13,7 +13,7 @@ private:
     Login login_;
 
 public:
-    void inputIdAndPassword(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp);
+    void inputIdAndPassword(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 
 #endif

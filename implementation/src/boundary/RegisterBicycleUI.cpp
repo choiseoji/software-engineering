@@ -1,9 +1,9 @@
 #include "../../include/boundary/RegisterBicycleUI.h"
 
-void RegisterBicycleUI::inputBicycleInfo(istringstream& iss, RegisteredBicycle& registeredBicycle, ofstream& out_fp) {
+void RegisterBicycleUI::inputBicycleInfo(ifstream& in_fp, RegisteredBicycle& registeredBicycle, ofstream& out_fp) {
 
     string id, password;
-    iss >> id >> password;
+    in_fp >> id >> password;
 
     pair<string, string> bicycleInfo = registerBicycle_.registerBicycle(id, password, registeredBicycle);
     // 출력

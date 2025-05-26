@@ -13,7 +13,7 @@ private:
     Logout logout_;
 
 public:
-    void logoutRequest(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp);
+    void logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp);
 };
 
 #endif

@@ -14,7 +14,7 @@ private:
     RentedBicycleInfo rentedBicycleInfo_;
 
 public:
-    void viewRentedBicycleRequest(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp);
+    void viewRentedBicycleRequest(RegisteredUser& registeredUser, ofstream& out_fp);
 
 };
 

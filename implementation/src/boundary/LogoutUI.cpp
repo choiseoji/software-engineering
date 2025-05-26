@@ -1,6 +1,6 @@
 #include "../../include/boundary/LogoutUI.h"
 
-void LogoutUI::logoutRequest(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp) {
+void LogoutUI::logoutRequest(RegisteredUser& registeredUser, ofstream& out_fp) {
 
     string logoutUserId = logout_.logoutUser(registeredUser);
     if (!logoutUserId.empty()) {

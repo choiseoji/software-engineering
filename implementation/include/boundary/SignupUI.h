@@ -13,7 +13,7 @@ private:
     Signup signup_;
 
 public:
-    void inputInformation(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp);
+    void inputInformation(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 
 #endif

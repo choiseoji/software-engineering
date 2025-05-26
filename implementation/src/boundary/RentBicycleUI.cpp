@@ -1,9 +1,9 @@
 #include "../../include/boundary/RentBicycleUI.h"
 
-void RentBicycleUI::rentRequest(istringstream& iss, RegisteredBicycle& registeredBicycle, RegisteredUser& registeredUser, ofstream& out_fp) {
+void RentBicycleUI::rentRequest(ifstream& in_fp, RegisteredBicycle& registeredBicycle, RegisteredUser& registeredUser, ofstream& out_fp) {
 
     string id;
-    iss >> id;
+    in_fp >> id;
 
     pair<string, string> rentedBicycleInfo = rentBicycle_.rentBicycle(id, registeredUser, registeredBicycle);
 

@@ -1,9 +1,9 @@
 #include "../../include/boundary/SignupUI.h"
 
-void SignupUI::inputInformation(istringstream& iss, RegisteredUser& registeredUser, ofstream& out_fp) {
+void SignupUI::inputInformation(ifstream& in_fp, RegisteredUser& registeredUser, ofstream& out_fp) {
 
     string id, password, phone_number;
-    iss >> id >> password >> phone_number;
+    in_fp >> id >> password >> phone_number;
 
     signup_.signupUser(id, password, phone_number, registeredUser);
     // 출력

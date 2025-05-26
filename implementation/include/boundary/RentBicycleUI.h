@@ -12,7 +12,7 @@ private:
     RentBicycle rentBicycle_;
 
 public:
-    void rentRequest(istringstream& iss, RegisteredBicycle& registeredBicycle, RegisteredUser& registeredUser, ofstream& out_fp);
+    void rentRequest(ifstream& in_fp, RegisteredBicycle& registeredBicycle, RegisteredUser& registeredUser, ofstream& out_fp);
 };
 
 #endif

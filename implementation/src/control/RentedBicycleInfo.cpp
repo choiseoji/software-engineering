@@ -9,10 +9,13 @@ vector<pair<string, string> > RentedBicycleInfo::viewRentedBicycle(RegisteredUse
         
         if (user->checkLoginStatus()) {
 
-            vector<Bicycle*> bicycles = user->listRentedBicycle();
-            for (Bicycle* b : bicycles) {
-
-                result.push_back(make_pair(b->getBicycleId(), b->getBicycleName()));
+            Member* member = dynamic_cast<Member*>(user);
+            if (member) {
+                vector<Bicycle*> bicycles = member->listRentedBicycle();
+                for (Bicycle* b : bicycles) {
+    
+                    result.push_back(make_pair(b->getBicycleId(), b->getBicycleName()));
+                }
             }
         }
     }

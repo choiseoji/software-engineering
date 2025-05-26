@@ -13,7 +13,7 @@ ExitUI::ExitUI(Exit& exit) : exit_(exit) {}
  * 함수이름 : exitRequest
  * 기능 : Exit 컨트롤 객체에게 종료 요청
  * 전달인자 :
- *      - out_fp : 출력 파일 스트림
+ *      - outFp : 출력 파일 스트림
  *      - isProgramExit : program 종료 여부 저장 변수
  * 반환 값 : 없음
  */
